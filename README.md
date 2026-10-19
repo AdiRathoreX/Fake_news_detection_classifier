@@ -32,3 +32,16 @@ Keep `app.py`, both `.joblib` files, and `requirements.txt` in the same folder. 
 ## One important limitation
 
 This is a student project, not a fact-checking service. The model can make mistakes, especially on short text or articles that are unlike the examples it learned from. Its prediction should not be treated as proof that a story is true or false.
+## Report, screenshots, and live app
+
+- [Major Project Report (PDF)](Fake_News_Detection_Major_Project_Report.pdf)
+- [Dataset Overview](SCREENSHOTS/Dataset%20Overview.png)
+- [Text Preprocessing](SCREENSHOTS/Text%20Preprocessing.png)
+- [Label Distribution](SCREENSHOTS/Label%20Distribution.png)
+- [Article Length Distribution](SCREENSHOTS/Article%20Length%20Distribution.png)
+- [Model Evaluation](SCREENSHOTS/Model%20Evaluation.png)
+- [App Model Dashboard](SCREENSHOTS/App%20Model%20Dashboard.png)
+- [App Prediction](SCREENSHOTS/App%20Prediction.png)
+- [Empty Input Warning](SCREENSHOTS/Empty%20Input%20Warning.png)
+
+Live app: [Open the Fake News Text Classifier](https://fakenewsdetectionclassifier-9wevyawygesyzkdvmlngbx.streamlit.app/)

@@ -1,7 +1,11 @@
 import joblib
 import streamlit as st
 
-st.set_page_config(page_title="Fake News Text Classifier", page_icon="📰")
+st.set_page_config(
+    page_title="Fake News Text Classifier",
+    page_icon="📰",
+    layout="centered"
+)
 
 @st.cache_resource
 def load_files():
@@ -39,3 +43,67 @@ st.caption(
     "This student project is not a fact-checking service. "
     "Predictions can be wrong and are not proof that a story is true or false."
 )
+
+st.divider()
+st.subheader("Model evaluation")
+
+st.caption(
+    "Scores below come from the held-out test set of 14,427 articles. "
+    "They describe test performance, not real-world fact-checking accuracy."
+)
+
+metric_columns = st.columns(3)
+metric_columns[0].metric("Naive Bayes accuracy", "86.8%")
+metric_columns[1].metric("Logistic Regression accuracy", "95.2%")
+metric_columns[2].metric("Linear SVM accuracy", "96.6%")
+
+st.write("Accuracy and macro F1 comparison")
+
+chart_data = {
+    "Model": ["Naive Bayes", "Logistic Regression", "Linear SVM"],
+    "Accuracy (%)": [86.8, 95.2, 96.6],
+    "Macro F1 (%)": [86.8, 95.2, 96.6],
+}
+st.bar_chart(
+    chart_data,
+    x="Model",
+    y=["Accuracy (%)", "Macro F1 (%)"],
+    sort=False
+)
+
+with st.expander("View confusion matrices"):
+    st.caption(
+        "Rows are the actual labels; columns show the model's predictions. "
+        "The label order is Fake, then Real."
+    )
+
+    matrix_columns = st.columns(3)
+
+    matrices = [
+        (
+            "Naive Bayes",
+            [5925, 817],
+            [1081, 6604],
+        ),
+        (
+            "Logistic Regression",
+            [6603, 291],
+            [403, 7130],
+        ),
+        (
+            "Linear SVM",
+            [6716, 195],
+            [290, 7226],
+        ),
+    ]
+
+    for column, (name, predicted_fake, predicted_real) in zip(
+        matrix_columns, matrices
+    ):
+        with column:
+            st.markdown(f"**{name}**")
+            st.table({
+                "Actual label": ["Fake", "Real"],
+                "Predicted Fake": predicted_fake,
+                "Predicted Real": predicted_real,
+            })

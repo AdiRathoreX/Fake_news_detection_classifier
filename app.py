@@ -68,7 +68,8 @@ st.bar_chart(
     chart_data,
     x="Model",
     y=["Accuracy (%)", "Macro F1 (%)"],
-    sort=False
+    sort=False,
+    stack=False
 )
 
 with st.expander("View confusion matrices"):

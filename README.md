@@ -1,41 +1,34 @@
 # Fake News Text Classifier
 
-## About this project
+## What this project does
 
-For this project, I built a simple app that uses machine learning to look for patterns in news articles and predict whether an article is likely to be fake or real. The app lets someone paste in a headline or article and view the model’s prediction.
+I built this project to explore whether a computer can learn patterns in news articles and use them to make a fake-or-real prediction. I also made a small Streamlit app so people can try it by pasting in an article.
 
-## The data
+## The data and how I used it
 
-I used the WELFake dataset, which contains 72,134 news articles. Each article has a label: `0` means fake and `1` means real. The dataset is available on [Zenodo](https://zenodo.org/records/4561253).
+I used the WELFake dataset from [Zenodo](https://zenodo.org/records/4561253). It contains 72,134 labeled articles: `0` means fake and `1` means real. I joined each article’s title and text, then used TF-IDF to turn the words into numbers the models could work with.
 
-The article titles and text were combined before training. I kept the dataset CSV out of this project folder because it is large. The download link above can be used to get it again.
+I split the data into training and test sets and compared three models. On the test set, Naive Bayes reached 86.8% accuracy, Logistic Regression reached 95.2%, and Linear SVM reached 96.6%. The Linear SVM also caught 95.9% of the fake articles in that test set, so I chose it for the app.
 
-## How I built it
+These scores describe one test on this dataset. They don’t tell us whether a new article is actually true or false.
 
-First, I checked the data for missing values and duplicates. Then I used TF-IDF to turn the article text into numbers that machine-learning models can work with.
+## Files
 
-I trained and compared two models using an 80/20 split: most articles were used for training, and the rest were held back to evaluate the models.
+- `app.py` is the app people can use.
+- `fake_news_svm_model.joblib` is the trained SVM model.
+- `tfidf_vectorizer.joblib` prepares text for the model.
+- `requirements.txt` lists the packages needed to run the app.
+- `Major_Project_Fake_News_Detection.ipynb` contains my analysis and training steps.
 
-- Naive Bayes achieved **86.8% accuracy** on the test data.
-- Logistic Regression achieved **95.2% accuracy** on the test data.
-
-I chose Logistic Regression for the app because it performed better on this test set.
-
-## Files in this project
-
-- `app.py` — the app for trying a prediction
-- `fake_news_logistic_model.joblib` — the trained model
-- `tfidf_vectorizer.joblib` — the tool that converts text into model-ready numbers
-- `requirements.txt` — the Python packages needed to run the app
-- `Major_Project_Fake_News_Detection.ipynb` — the notebook with the data analysis and model training
+The dataset CSV isn’t included because it is large. It can be downloaded from the Zenodo link above if the model needs to be retrained.
 
 ## Running the app
 
-Keep `app.py`, both `.joblib` files, and `requirements.txt` together in one folder. On Windows, open a terminal in that folder and run:
+Keep `app.py`, both `.joblib` files, and `requirements.txt` in the same folder. In a Windows terminal opened in that folder, run:
 
     py -m pip install -r requirements.txt
     py -m streamlit run app.py
 
-## A note about the predictions
+## One important limitation
 
-This project is a learning demonstration, not a fact-checking service. The model can make mistakes, so its prediction should not be treated as proof that an article is true or false.
+This is a student project, not a fact-checking service. The model can make mistakes, especially on short text or articles that are unlike the examples it learned from. Its prediction should not be treated as proof that a story is true or false.

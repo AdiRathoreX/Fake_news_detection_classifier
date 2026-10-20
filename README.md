@@ -8,9 +8,9 @@ I built this project to explore whether a computer can learn patterns in news ar
 
 I used the WELFake dataset from [Zenodo](https://zenodo.org/records/4561253). It contains 72,134 labeled articles: `0` means fake and `1` means real. I joined each article’s title and text, then used TF-IDF to turn the words into numbers the models could work with.
 
-I split the data into training and test sets and compared three models. On the test set, Naive Bayes reached 86.8% accuracy, Logistic Regression reached 95.2%, and Linear SVM reached 96.6%. The Linear SVM also caught 95.9% of the fake articles in that test set, so I chose it for the app.
+I split the data into training and test sets and compared three models. On the held-out test set of 14,427 articles, Naive Bayes reached 86.8% accuracy, Logistic Regression reached 95.2%, and Linear SVM reached 97.6% accuracy, with a macro F1 score of 97.6%. The Linear SVM correctly identified 96.9% of the fake articles in that test set, so I chose it for the app.
 
-These scores describe one test on this dataset. They don’t tell us whether a new article is actually true or false.
+These scores describe performance on this dataset. They don’t tell us whether a new article is actually true or false.
 
 ## Files
 

@@ -35,13 +35,13 @@ This is a student project, not a fact-checking service. The model can make mista
 ## Report, screenshots, and live app
 
 - [Major Project Report (PDF)](Fake_News_Detection_Major_Project_Report.pdf)
-- [Dataset Overview](SCREENSHOTS/Dataset%20Overview.png)
-- [Text Preprocessing](SCREENSHOTS/Text%20Preprocessing.png)
-- [Label Distribution](SCREENSHOTS/Label%20Distribution.png)
-- [Article Length Distribution](SCREENSHOTS/Article%20Length%20Distribution.png)
-- [Model Evaluation](SCREENSHOTS/Model%20Evaluation.png)
-- [App Model Dashboard](SCREENSHOTS/App%20Model%20Dashboard.png)
-- [App Prediction](SCREENSHOTS/App%20Prediction.png)
-- [Empty Input Warning](SCREENSHOTS/Empty%20Input%20Warning.png)
+- [Dataset Overview](SCREESHOTS/Dataset%20Overview.png)
+- [Text Preprocessing](SCREESHOTS/Text%20Preprocessing.png)
+- [Label Distribution](SCREESHOTS/Label%20Distribution.png)
+- [Article Length Distribution](SCREESHOTS/Article%20Length%20Distribution.png)
+- [Model Evaluation](SCREESHOTS/Model%20Evaluation.png)
+- [App Model Dashboard](SCREESHOTS/App%20Model%20Dashboard.png)
+- [App Prediction](SCREESHOTS/App%20Prediction.png)
+- [Empty Input Warning](SCREESHOTS/Empty%20Input%20Warning.png)
 
 Live app: [Open the Fake News Text Classifier](https://fakenewsdetectionclassifier-9wevyawygesyzkdvmlngbx.streamlit.app/)

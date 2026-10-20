@@ -44,5 +44,7 @@ This is a student project, not a fact-checking service. The model can make mista
 - [App Model Dashboard](SCREENSHOTS/App%20Model%20Dashboard.png)
 - [App Prediction](SCREENSHOTS/App%20Prediction.png)
 - [Empty Input Warning](SCREENSHOTS/Empty%20Input%20Warning.png)
+- [Project demonstration video](https://1drv.ms/v/c/A1FD4552E3FA312F/IQAG71Sc-opEQoWj2_clkZSEAX8eY68bfIPeuU7UuZ_0-dg?e=bc4QE5)
+
 
 Live app: [Open the Fake News Text Classifier](https://fakenewsdetectionclassifier-9wevyawygesyzkdvmlngbx.streamlit.app/)

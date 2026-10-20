@@ -13,6 +13,7 @@ def load_files():
     vectorizer = joblib.load("tfidf_vectorizer.joblib")
     return model, vectorizer
 
+
 model, vectorizer = load_files()
 
 st.title("Fake News Text Classifier")
@@ -55,14 +56,14 @@ st.caption(
 metric_columns = st.columns(3)
 metric_columns[0].metric("Naive Bayes accuracy", "86.8%")
 metric_columns[1].metric("Logistic Regression accuracy", "95.2%")
-metric_columns[2].metric("Linear SVM accuracy", "96.6%")
+metric_columns[2].metric("Linear SVM accuracy", "97.6%")
 
 st.write("Accuracy and macro F1 comparison")
 
 chart_data = {
     "Model": ["Naive Bayes", "Logistic Regression", "Linear SVM"],
-    "Accuracy (%)": [86.8, 95.2, 96.6],
-    "Macro F1 (%)": [86.8, 95.2, 96.6],
+    "Accuracy (%)": [86.8, 95.2, 97.6],
+    "Macro F1 (%)": [86.8, 95.2, 97.6],
 }
 st.bar_chart(
     chart_data,
@@ -93,8 +94,8 @@ with st.expander("View confusion matrices"):
         ),
         (
             "Linear SVM",
-            [6716, 195],
-            [290, 7226],
+            [6789, 131],
+            [217, 7290],
         ),
     ]
 
